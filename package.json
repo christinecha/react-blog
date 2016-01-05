@@ -1,0 +1,42 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "A simple blog built in React.",
+  "main": "index.html",
+  "scripts": {
+    "start": "webpack-dev-server --hot --progress --colors",
+    "build": "webpack --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christinecha/react-blog.git"
+  },
+  "keywords": [
+    "blog",
+    "react",
+    "js"
+  ],
+  "author": "christine cha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christinecha/react-blog/issues"
+  },
+  "homepage": "https://github.com/christinecha/react-blog#readme",
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "history": "^1.17.0",
+    "jsx-loader": "^0.13.2",
+    "react": "^0.14.5",
+    "react-hot-loader": "^1.3.0",
+    "react-router": "^1.0.3",
+    "webpack": "^1.12.1",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "webpack-dev-middleware": "^1.4.0"
+  }
+}
