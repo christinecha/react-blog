@@ -1,3 +1,48 @@
-body, * {
+body * {
     font-family: monospace;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    outline: none;
+}
+
+.blog-container {
+    display: inline-flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.postfeed {
+    background-color: #eee;
+    flex: 2;
+    padding: 30px;
+}
+
+.posteditor {
+    background-color: #ccc;
+    flex: 1;
+    padding: 30px;
+}
+
+.posteditor input, .posteditor textarea {
+    border: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+.posteditor textarea {
+    width: 80%;
+    min-height: 200px;
+}
+
+.blogpost {
+    background-color: white;
+    margin: 5px;
+    padding: 10px;
+}
+
+
+@media all and (max-width: 600px) {
+    .blog-container {
+        display: block;
+    }
 }

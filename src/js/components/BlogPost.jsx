@@ -3,25 +3,30 @@
 import React from 'react';
 import styles from '../../css/global.css';
 
-class PostInfo extends React.Component {
+class BlogPost extends React.Component {
 
     render() {
+        var keywordNodes = this.props.keywords.map((keyword, index) => {
+            return (
+                <span key={index}>
+                    {keyword}
+                </span>
+            )
+        })
         return (
-            <div>
-                <span>Author</span>
-                <span> | </span>
-                <span>Date</span>
+            <div className='blogpost'>
+                <h3>{this.props.title}</h3>
+                <p>{this.props.body}</p>
+                <div>
+                    <span>{this.props.author}</span>
+                    <span> | </span>
+                    <span>{this.props.datetime}</span>
+                    <span> | </span>
+                    {keywordNodes}
+                </div>
             </div>
-        );
-    }
-
-}
-
-class BlogPosts extends React.Component {
-
-    render() {
-        <div></div>
+        )
     }
 }
 
-export default BlogPosts
+export default BlogPost

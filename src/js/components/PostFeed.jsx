@@ -1,23 +1,25 @@
 "use strict"
 
 import React from 'react'
-import BlogPosts from './BlogPost.jsx'
+import BlogPost from './BlogPost.jsx'
 
 class PostFeed extends React.Component {
 
     render() {
-        console.log(this.props.posts)
-        let postNodes = this.props.posts.map((post) => {
+        let postNodes = this.props.posts.map((post, index) => {
             return (
-                <div>
-                    <h3>{post.title}</h3>
-                    <p>{post.body}</p>
-                </div>
+                <BlogPost
+                    key={index}
+                    title={post.title}
+                    body={post.body}
+                    author={post.author}
+                    datetime={post.datetime}
+                    keywords={post.keywords} />
             )
         })
 
         return (
-            <div>
+            <div className='postfeed'>
                 <h2>Post Feed</h2>
                 {postNodes}
             </div>
