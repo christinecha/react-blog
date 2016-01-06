@@ -1,31 +1,21 @@
 var webpack = require('webpack');
 
 module.exports = {
-    entry: [
-      '/',
-      "./src/app.js"
-    ],
+    entry: path.resolve(__dirname, '/src/app.js'),
     output: {
-        path: __dirname + '/build',
-        filename: "bundle.js"
-    },
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+      },
     module: {
-        loaders: [
-            {
-                test: /\.js?$/,
-                loaders: ['react-hot', 'babel-loader?presets[]=react,presets[]=es2015'],
-                exclude: /node_modules/
-            },
-            {
-                test: /\.jsx?$/,
-                loaders: ['react-hot', 'babel-loader?presets[]=react,presets[]=es2015'],
-                exclude: /node_modules/
-            },
-            { test: /\.css$/, loader: "style!css" }
-        ]
-    },
-    plugins: [
-      new webpack.NoErrorsPlugin()
-    ]
+        loaders: [{
+          test: /\.js$/,
+
+          // There is not need to run the loader through
+          // vendors
+          exclude: /node_modules/,
+          loader: 'babel-loader'
+        }]
+      }
+    };
 
 };
